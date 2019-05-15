@@ -59,14 +59,6 @@ RUN yum -y install libdb-devel
 WORKDIR /root
 RUN yum -y install libevent-devel zlib-devel openssl-devel
 
-#Upgrade Boost
-#WORKDIR /root
-#RUN wget http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz
-#RUN tar xvf boost_1_53_0.tar.gz
-#WORKDIR /root/boost_1_53_0
-#RUN ./bootstrap.sh
-#RUN ./b2 install
-
 #Build and Install Thrift Compiler
 WORKDIR /root
 RUN git clone https://github.com/apache/thrift.git
