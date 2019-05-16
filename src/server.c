@@ -1,7 +1,6 @@
 /*
  * This file is the main program.
  * 
- * Written by M.Yasaka on 6/17/2018
  */
 
 #include <glib-object.h>
@@ -22,12 +21,7 @@
 #include "gen-c_glib/sample_basic.h"
 #include "gen-c_glib/sample_sample_types.h"
 
-#include "handler.h"
-
 #define DEBUG_WRITE_LOG(s) printf( s );puts(""); 
-
-#if 0
-#endif
 
 
 /* ---------------------------------------------------------------- */
@@ -58,13 +52,14 @@ sigint_handler (int signal_number)
     thrift_server_stop (server);
 }
 
+
 /**
  * Main function.
  *
  */
 int main ( void ){
 
-  SampleBasicimplHandler *handler;
+  sampleBasicHandler *handler;
   sampleBasicProcessor *processor;
     
   ThriftServerTransport *server_transport;
@@ -81,13 +76,11 @@ int main ( void ){
 #endif
 
  
-  DEBUG_WRITE_LOG( " before handler  " );
-   
   /* Create an instance of our handler, which provides the service's
      methods' implementation */
 
   handler = 
-     g_object_new (TYPE_SAMPLE_BASICIMPL_HANDLER, 
+     g_object_new (SAMPLE_TYPE_BASIC_HANDLER, 
                    NULL); 
  
   

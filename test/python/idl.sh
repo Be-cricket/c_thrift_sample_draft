@@ -1,2 +1,2 @@
-#thrift --gen c_glib thbdb.thrift
-thrift --gen py ../../src/thbdb.thrift
+#thrift -r --gen py '../../src/sample.thrift'
+thrift --gen c_glib 
